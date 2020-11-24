@@ -46,8 +46,14 @@ int main() {
                                     {1,0,0,1,0,1},
                                     {1,1,0,0,1,0}
                                    };
+
     int max;
     Graph test1;
     max = test1.graph_color(Adg_G);
+
+
+    graph_color(Adg_G);
+    return 0;
+
 
 }
