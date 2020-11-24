@@ -184,8 +184,8 @@ int main(){
     srand (time(NULL));
 
     ac_int<7,true> rand_num = rand();
-    number =  rand_num;
-    x = -4;
+    number =  -30;//rand_num;
+    x = -8;
     std::cout << "Mult in:" << x << std::endl;
     std::cout << "Number:" << number << std::endl;
     csd_encode(number,num_csd);
