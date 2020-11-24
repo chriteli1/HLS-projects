@@ -34,5 +34,6 @@ int main() {
                                    };
 
     graph_color(Adg_G);
+    return 0;
 
 }
