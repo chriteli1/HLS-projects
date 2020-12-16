@@ -77,7 +77,7 @@ int main(){
     while(total_count<10){
         
         count = rand() % 5 + 1;
-        std::cout << count << std::endl;
+        //std::cout << count << std::endl;
         num_to_write = rand() % 16 + 1;
         do{
             
