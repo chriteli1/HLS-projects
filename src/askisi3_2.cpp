@@ -23,7 +23,7 @@ public:
      if(in_card.available(1)){
          
             card_mem[index] = in_card.read();
-        
+            std::cout << "Next card is:" << card_mem[index] << std::endl;;
             if(card_mem[index] == 1) card_mem[index] = 11;
             tot_points = 0;
             for(int i=0;i<=index;++i){
@@ -58,6 +58,8 @@ int main(){
     bool win = 0;
     ac_int<4,false> x;
     
+
+    //======= Version with player input =======//
     /*
     BlackJack game1;
     while(end == 0){
@@ -76,6 +78,8 @@ int main(){
     if(win == 1) std::cout << "You won!" << std::endl;
     else std::cout << "Unlucky :(" << std::endl;
     */
+   //==========================================//
+
     BlackJack game2;
     srand (time(NULL));
     //std::cout << x << std::endl;
