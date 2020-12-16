@@ -2,13 +2,12 @@
 #include "ac_int.h"
 class Graph{
 private:
-bool Adg_G[6][6];
 int color[6] = {0,0,0,0,0,0};
 int max;
 public:
 Graph(){};
 #pragma hls_design top
-int graph_color(bool Adg_G[6][6]){
+int graph_color(ac_int<6,false> Adg_G[6]){
     int c;
     for(int i=0;i<6;++i){
         c = 1;
@@ -39,20 +38,23 @@ int graph_color(bool Adg_G[6][6]){
 }
 };
 int main() {
-    bool Adg_G[6][6] =  {{0,1,0,0,1,1},
+    ac_int<6,false> Adg_G[6] =  {50,37,10,20,41,19};
+                                    //{19,41,20,10,37,50};
+                                  /*{{0,1,0,0,1,1},
                                     {1,0,1,0,0,1},
                                     {0,1,0,1,0,0},
                                     {0,0,1,0,1,0},
                                     {1,0,0,1,0,1},
                                     {1,1,0,0,1,0}
                                    };
+                                   */
 
     int max;
     Graph test1;
     max = test1.graph_color(Adg_G);
 
 
-    graph_color(Adg_G);
+    //graph_color(Adg_G);
     return 0;
 
 
