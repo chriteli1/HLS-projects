@@ -11,8 +11,11 @@ void runlength_encode(ac_channel<ac_int<4,false> > &in,
         ac_int<4,false> number ;
         ac_int<4,false> next_number ;
         number = in.read();
+        std::cout << number << " ";
             for(int j=0;j<9;++j){
                 next_number = in.read();
+                std::cout << next_number << " ";
+
                 if(next_number != number){
                     out.write(number);
                     out.write(count);
@@ -28,6 +31,7 @@ void runlength_encode(ac_channel<ac_int<4,false> > &in,
                 
         
     }
+    std::cout << std::endl;
  }
 
 int main(){
@@ -65,5 +69,28 @@ int main(){
          std::cout << out.read() << " ";
      }while(out.available(1));
      std::cout << std::endl;
-
+    std::cout << std::endl;
+    int count;
+    int total_count = 0;
+    int num_to_write;
+    srand(time(NULL));
+    while(total_count<10){
+        
+        count = rand() % 5 + 1;
+        std::cout << count << std::endl;
+        num_to_write = rand() % 16 + 1;
+        do{
+            
+            //std::cout << num_to_write << std::endl;
+            in.write(num_to_write);
+            --count;
+            ++total_count;
+        }while(count!=0 && total_count<10);
+    }
+    std::cout << std::endl;
+    runlength_encode(in,out);
+     do{
+         std::cout << out.read() << " ";
+     }while(out.available(1));
+     std::cout << std::endl;
  }
