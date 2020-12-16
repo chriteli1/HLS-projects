@@ -184,7 +184,7 @@ int main(){
     srand (time(NULL));
 
     ac_int<7,true> rand_num = rand();
-    number =  -30;//rand_num;
+    number =  rand_num;
     x = -8;
     std::cout << "Mult in:" << x << std::endl;
     std::cout << "Number:" << number << std::endl;
